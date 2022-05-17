@@ -3,15 +3,21 @@ import './App.css';
 
 const reducer = (state, action) => {
   switch (action){
-    case 'increment': {
-      return state + 1;
 
+    case 'increment-1': {
+      return state + 1;
     }
 
-    case 'decrement': {
+    case 'decrement-1': {
       return state - 1;
+    }
 
+    case 'increment-10': {
+      return state + 10;
+    }
 
+    case 'decrement-10': {
+      return state - 10;
     }
 
     default: {
@@ -31,8 +37,13 @@ function App() {
     <div className="App">
       <div class='counter-1'>
         <p>The value of the counter is: {state}</p>
-        <button onClick={()=> dispatch('increment')}>Increase</button>
-        <button onClick={()=> dispatch('decrement')}>Decrease</button>
+        <button onClick={()=> dispatch('increment-10')}>Increase 10</button>
+        <button onClick={()=> dispatch('increment-1')}>Increase 1</button>
+        <button onClick={()=> dispatch('decrement-1')}>Decrease 1</button>
+        <button onClick={()=> dispatch('decrement-10')}>Decrease 10</button>
+        
+
+
 
       </div>
     </div>
